@@ -4,9 +4,9 @@ f(A) - Anywhere, Personal Tool For You
 #### 계산기, 알람, 메모, 달력 등 필요한 기능을 하나의 어플리케이션에서 손 쉽게 사용하세요.
 
 <hr />
-**Team f(x), KNUT**
-팀 리더: __신이종__, 총괄, *znlspf123@naver.com*<br />
-팀 멤버: __이진형__, 백엔드, *byaa1972@gmail.com*<br />
-팀 멤버: __Akrom__, 프론트엔드, *akromkhoja.s@gmail.com*<br />
+<strong>Team f(x), KNUT</strong>
+팀 리더: __신이종__, 총괄, <italic>znlspf123@naver.com</italic><br />
+팀 멤버: __이진형__, 백엔드, <italic>byaa1972@gmail.com</italic><br />
+팀 멤버: __Akrom__, 프론트엔드, <italic>akromkhoja.s@gmail.com</italic><br />
 모든 멤버가 역할의 틀을 넘나들며 개발 전반에 기여했습니다.<br />
 <hr />
