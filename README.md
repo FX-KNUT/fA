@@ -5,8 +5,8 @@ f(A) - Anywhere, Personal Tool For You
 
 <hr />
 <strong>Team f(x), KNUT</strong>
-팀 리더: __신이종__, 총괄, <italic>znlspf123@naver.com</italic><br />
-팀 멤버: __이진형__, 백엔드, <italic>byaa1972@gmail.com</italic><br />
-팀 멤버: __Akrom__, 프론트엔드, <italic>akromkhoja.s@gmail.com</italic><br />
+팀 리더: <strong>신이종</strong>, 총괄, <i>znlspf123@naver.com</i><br />
+팀 멤버: <strong>이진형</strong>, 백엔드, <i>byaa1972@gmail.com</i><br />
+팀 멤버: <strong>Akrom</strong>, 프론트엔드, <i>akromkhoja.s@gmail.com</i><br />
 모든 멤버가 역할의 틀을 넘나들며 개발 전반에 기여했습니다.<br />
 <hr />
