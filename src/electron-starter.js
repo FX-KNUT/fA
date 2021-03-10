@@ -13,6 +13,7 @@ function createWindow () {
   });
 
   mainWindow.loadURL('http://localhost:3000');
+  mainWindow.resizable = false;
 };
 
 app.whenReady().then(() => {

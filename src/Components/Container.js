@@ -1,7 +1,15 @@
+import Body from "./Body";
+import Footer from "./Footer";
+import Header from "./Header";
+
 const Container = () => {
 
-    return (
-        <div id="container" className=""></div>
+    return (                
+        <div className="justify-items-start ml-8">
+            <Header />
+            <Body />
+            <Footer />
+        </div>
     );
 };
 
