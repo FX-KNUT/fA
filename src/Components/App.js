@@ -3,7 +3,7 @@ import Container from "./Container";
 import Footer from "./Footer";
 import Header from "./Header";
 import reducer from "./Reducer";
-import "./tailwind.css"
+import "../tailwind.css"
 
 export const store = createStore(reducer);
 

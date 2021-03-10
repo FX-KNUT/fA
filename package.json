@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "concurrently": "^6.0.0",
+    "cross-env": "^7.0.3",
     "electron": "^7.0.1",
     "electron-builder": "^22.1.0",
     "react": "^17.0.1",
@@ -14,6 +16,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "redux": "^4.0.5",
+    "wait-on": "^5.2.1",
     "web-vitals": "^1.0.1"
   },
   "main": "src/electron-starter.js",
@@ -22,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron ."
+    "electron": "electron .",
+    "akrom": "concurrently \"cross-env BROWSER=none npm run start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
