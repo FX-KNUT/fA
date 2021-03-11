@@ -538,6 +538,11 @@ video {
   width: 100%;
 }
 
+.removescroll {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -11475,6 +11480,18 @@ video {
   height: 20%;
 }
 
+.h-header {
+  height: 15%;
+}
+
+.h-body {
+  height: 75%;
+}
+
+.h-footer {
+  height: 10%;
+}
+
 .h-2\/5 {
   height: 40%;
 }
@@ -21074,6 +21091,38 @@ video {
   top: 50%;
 }
 
+.sibal {
+  right: 15%;
+}
+
+.functionbarposition {
+  right: 15%;
+}
+
+.firstfunction {
+  right: 40%;
+}
+
+.secondfunction {
+  right: 65%;
+}
+
+.selectbtn-clicked {
+  right: 20%;
+}
+
+.selectbtn-one {
+  right: 45%;
+}
+
+.selectbtn-two {
+  right: 70%;
+}
+
+.functioncontainer {
+  right: -25%;
+}
+
 .right-1\/2 {
   right: 50%;
 }
@@ -29031,6 +29080,10 @@ video {
 
 .-translate-x-2\/3 {
   --tw-translate-x: -66.666667%;
+}
+
+.-translate-x-push_select_bar {
+  --tw-translate-x: -15%;
 }
 
 .-translate-x-1\/4 {

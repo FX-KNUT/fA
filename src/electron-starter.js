@@ -9,7 +9,8 @@ function createWindow () {
     height: 900,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    frame : false // 2021 03 11 12:48, 테두리 바 삭제를 위해 추가, 신이종
   });
 
   mainWindow.loadURL('http://localhost:3000');
