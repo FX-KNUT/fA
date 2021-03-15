@@ -34,6 +34,8 @@ Use a more readable tab size (opinionated).
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -47,6 +49,7 @@ Remove the margin in all browsers.
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 /**
@@ -54,7 +57,7 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
 */
 
 body {
-  font-family: 'Sunflower', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /*
@@ -104,7 +107,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: 'Sunflower', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /**
@@ -165,7 +168,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: 'Sunflower', sans-serif; /* 1 */
+  font-family: 'Noto Sans KR', sans-serif; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
@@ -349,7 +352,7 @@ ul {
  */
 
 html {
-  font-family: 'Sunflower', sans-serif;/* 1 */
+  font-family: 'Noto Sans KR', sans-serif;/* 1 */
   line-height: 1.5; /* 2 */
 }
 
@@ -498,7 +501,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: 'Sunflower', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /**
@@ -11261,15 +11264,15 @@ video {
 }
 
 .font-sans {
-  font-family: 'Sunflower', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .font-serif {
-  font-family: 'Sunflower', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .font-mono {
-  font-family: 'Sunflower', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .font-thin {
@@ -11480,12 +11483,16 @@ video {
   height: 20%;
 }
 
+.h-1\/10 {
+  height: 10%;
+}
+
 .h-header {
-  height: 15%;
+  height: 8%;
 }
 
 .h-body {
-  height: 75%;
+  height: 82%;
 }
 
 .h-footer {
@@ -21095,28 +21102,49 @@ video {
   right: 15%;
 }
 
-.functionbarposition {
-  right: 15%;
+.functionbarsize {
+  width: 20%;
+  height: 100%;
+}
+
+.h-15 {
+  height: 15%;
+}
+
+.h-75 {
+  height: 75%;
 }
 
 .firstfunction {
-  right: 40%;
-}
-
-.secondfunction {
-  right: 65%;
-}
-
-.selectbtn-clicked {
   right: 20%;
 }
 
-.selectbtn-one {
+.secondfunction {
   right: 45%;
 }
 
+.right-select-bar {
+  right: 1%;
+}
+
+.selectbtn-clicked {
+  right: 21%;
+}
+
+.selectbtn-one {
+  right: 46%;
+}
+
 .selectbtn-two {
-  right: 70%;
+  right: 71%;
+}
+
+.selectbtn-onefunc {
+  right: 26%;
+}
+
+.selectbtn-twofunc {
+  right: 51%;
 }
 
 .functioncontainer {
@@ -26901,6 +26929,10 @@ video {
   width: 0.25rem;
 }
 
+.w-2p {
+  width: 2%;
+}
+
 .w-2 {
   width: 0.5rem;
 }
@@ -27011,6 +27043,10 @@ video {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-98 {
+  width: 98%;
 }
 
 .w-auto {
@@ -41988,15 +42024,15 @@ video {
   }
 
   .sm\:font-sans {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .sm\:font-serif {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .sm\:font-mono {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .sm\:font-thin {
@@ -72581,15 +72617,15 @@ video {
   }
 
   .md\:font-sans {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .md\:font-serif {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .md\:font-mono {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .md\:font-thin {
@@ -103174,15 +103210,15 @@ video {
   }
 
   .lg\:font-sans {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .lg\:font-serif {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .lg\:font-mono {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .lg\:font-thin {
@@ -133767,15 +133803,15 @@ video {
   }
 
   .xl\:font-sans {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .xl\:font-serif {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .xl\:font-mono {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .xl\:font-thin {
@@ -164360,15 +164396,15 @@ video {
   }
 
   .\32xl\:font-sans {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .\32xl\:font-serif {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .\32xl\:font-mono {
-    font-family: 'Sunflower', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   .\32xl\:font-thin {

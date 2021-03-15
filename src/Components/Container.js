@@ -5,7 +5,7 @@ import Header from "./Header";
 const Container = () => {
 
     return (                
-        <div className="justify-items-start">
+        <div className="h-full">
             <Header />
             <Body />
             <Footer />

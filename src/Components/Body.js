@@ -9,7 +9,7 @@ const Body = () => {
     }, 1000);
 
     return (
-        <div id="realbody" className="h-body text-black w-full h-full flex items-center justify-center text-6xl">
+        <div id="realbody" className="h-body w-full text-black flex items-center justify-center text-6xl">
             <pre>
                 <div id="welcome_text" className="">Hello, Bitches?</div>
                 <div id="welcome_clock" className=""> {time}</div>                
