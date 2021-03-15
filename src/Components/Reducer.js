@@ -15,7 +15,7 @@ const reducer = (state = {
                     selected: false,
                     first_clicked: false,
                     degree: 0, 
-                    func_arr: []
+                    func_   : []
                                     }, action) => {
 
     switch(action.type){
