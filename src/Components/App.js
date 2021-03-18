@@ -1,10 +1,10 @@
 import { createStore } from "redux";
-import reducer, { DESTROY } from "./Reducer";
+import reducer, { DESTROY } from "./Reducer/Reducer.js";
 import "../tailwind.css"
 import { useEffect } from "react";
-import Container from "./Container";
+import Container from "./Body Parts/Container.js";
 import SelectBar from "./SelectBar";
-import FunctionContainer from "./FunctionContainer.js";
+import FunctionContainer from "./FunctionContainer/FunctionContainer.js";
 import Calculator from "./Functions/Calculator";
 import Calendar from "./Functions/Calendar";
 // import {loadFunctionContainer} from "./Waiting";
@@ -22,28 +22,30 @@ function App() {
   useEffect(() => {
     const html = document.querySelector("html");
     html.classList.add("removescroll"); // 스크롤바를 없애서 옆에 div가 숨어있는걸 모르게. 웹으로 동작시 방향키 오른쪽 클릭하면 보임
+    html.style.overflow = "hidden !important";
 
     return () => {store.dispatch({type: DESTROY})};
   }, []);
 
   return (
-    <div id="background" className="min-h-screen inset-0 bg-yellow-100 bg-opacity-70">
-      <section id="wrap" className="absolute w-screen h-screen">
-        <Container />
-        <SelectBar />
-      </section>
-      <section id="functions" className="absolute top-0 -right-1/4
-                                          h-full functionbarsize
-                                          bg-pink-100 bg-opacity-80
-                                          transition-all ease-in-out duration-500">
-        <FunctionContainer />
-      </section>
-      {/* <section id="functions_lurker" className="absolute top-0
-                                                h-full w-full
-                                                transition-all ease-in-out duration-700"> */}
-      <Calculator />
-      <Calendar />
-    </div>
+    <>
+      <div id="background" className="min-h-screen inset-0 bg-yellow-100 bg-opacity-70">
+        <section id="wrap" className="absolute w-screen h-screen">
+          <Container />
+          <SelectBar />
+        </section>
+        <section id="functions" className="absolute top-0 -right-1/4
+                                            h-full functionbarsize
+                                            bg-pink-100 bg-opacity-80
+                                            transition-all ease-in-out duration-500">
+          <FunctionContainer />
+        </section>
+        {/* Functions */}
+        <Calculator />
+        <Calendar />
+      </div>
+      <div id="modal" className="absolute opacity-0.2 ease "></div>
+    </>
   );
 }
 

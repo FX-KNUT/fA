@@ -1,8 +1,8 @@
 // function-container-header => h-15 (height: 15%), function-container-body => h-75 (height: 75%)
 
-import close from "../Res/Images/Function_Close.png";
-import { store } from "./App";
-import { FUNCTION_CLOSER } from "./Reducer";
+import close from "../../Res/Images/Function_Close.png";
+import { store } from "./../App";
+import { FUNCTION_CLOSER } from "./../Reducer/Reducer.js";
 
 const FunctionContainerHeader = () => {
 

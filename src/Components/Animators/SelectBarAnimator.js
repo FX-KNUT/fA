@@ -1,6 +1,6 @@
 import AnimationSynchronizer from './AnimationSynchronizer.js';
-import {store} from './App.js';
-import { SELECT_BTN_CLICKED } from './Reducer.js';
+import {store} from '../App.js';
+import { SELECT_BTN_CLICKED } from '../Reducer/Reducer.js';
 
 const SelectBarAnimator = () => {
 

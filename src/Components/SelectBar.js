@@ -2,7 +2,7 @@
 // functionbarposition (right: 20%), firstfunction(right: 45%), secondfunction(right: 70%)
 
 import SelectButton from "../Res/Images/SelectBar.png";
-import SelectBarAnimator from "./SelectBarAnimator.js";
+import SelectBarAnimator from "./Animators/SelectBarAnimator.js";
 
 const SelectBar = () => {
 

@@ -1,5 +1,5 @@
 // function-container-header => h-15 (height: 15%), function-container-body => h-75 (height: 75%)
-import Setting from '../Res/Images/Setting.png'
+import Setting from '../../Res/Images/Setting.png'
 
 const FunctionContainerFooter = () => {
 

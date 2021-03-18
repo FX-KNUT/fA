@@ -1,4 +1,4 @@
-import AnimationSynchronizer from "./AnimationSynchronizer";
+import AnimationSynchronizer from "./../Animators/AnimationSynchronizer";
 import StateValidator from "./StateValidator";
 
 export const SELECT_BTN_CLICKED = "select button clicked";
@@ -15,7 +15,13 @@ const reducer = (state = {
                     selected: false,
                     first_clicked: false,
                     degree: 0, 
-                    func_   : []
+                    func_arr: [],
+                    calc: {
+                        clicked: false
+                    },
+                    cal: {
+                        clicked: false
+                    }
                                     }, action) => {
 
     switch(action.type){
@@ -37,14 +43,23 @@ const reducer = (state = {
             state.degree = StateValidator(state.degree) && state.degree--;
             return state;
         case CALC_CLICKED:
-            state.degree++;
-            if(state.degree === StateValidator(state.degree)) {     
-                const CALC_SELECTOR = document.querySelector("#functions_calculator");   
-                state.func_arr.push(CALC_SELECTOR);
-                AnimationSynchronizer(state);           
-            } else {
+            const CALC_SELECTOR = document.querySelector("#functions_calculator"); 
+            if(state.calc.clicked === false) {
+                state.degree++;
+                if(state.degree === StateValidator(state.degree)) {        
+                    state.func_arr.push(CALC_SELECTOR);
+                    AnimationSynchronizer(state);           
+                } else {
+                    state.degree--;
+                }
+            } else if(state.calc.clicked === true) {
                 state.degree--;
+                state.func_arr.pop(CALC_SELECTOR);
+                AnimationSynchronizer(state);
             }
+            console.log(state.calc.clicked);
+            state.calc.clicked = !state.calc.clicked;
+            console.log(state.calc.clicked);
             return state;
         case CAL_CLICKED:
             state.degree++;

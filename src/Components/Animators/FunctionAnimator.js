@@ -1,6 +1,6 @@
-import { store } from "./App.js";
-import { CAL, CALC } from "./ConstantStorage.js";
-import { CALC_CLICKED, CAL_CLICKED } from "./Reducer.js";
+import { store } from "./../App.js";
+import { CAL, CALC } from "./../ConstantStorage.js";
+import { CALC_CLICKED, CAL_CLICKED } from "./../Reducer/Reducer.js";
 
 const FunctionAnimator = e => {
 
