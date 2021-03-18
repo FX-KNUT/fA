@@ -1,7 +1,8 @@
 // function-container-header => h-15 (height: 15%), h-75 (height: 75%)
 
-import FunctionAnimator from "./../Animators/FunctionAnimator.js";
-import Functions from "./../Functions";
+import FunctionAnimator from "../../Animators/FunctionAnimator";
+import Functions from "./Functions/Functions";
+
 
 const FunctionContainerBody = () => {
 

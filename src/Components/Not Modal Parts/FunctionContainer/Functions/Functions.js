@@ -1,5 +1,5 @@
-import Calc from "../Res/Images/Calc.png";
-import Cal from "../Res/Images/Cal.png"
+import Calc from "../../../../Res/Images/Calc.png";
+import Cal from "../../../../Res/Images/Cal.png";
 
 const Functions = () => {
 

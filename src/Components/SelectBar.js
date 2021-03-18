@@ -3,6 +3,7 @@
 
 import SelectButton from "../Res/Images/SelectBar.png";
 import SelectBarAnimator from "./Animators/SelectBarAnimator.js";
+import { select_button_circle_className } from "./ConstantStorage";
 
 const SelectBar = () => {
 
@@ -11,10 +12,7 @@ const SelectBar = () => {
     }
 
     return (
-        <div id="select_button_circle" className="absolute top-0 right-select-bar flex items-center justify-center
-                                                    rounded-full h-20 w-20 border-4 border-transparent
-                                                    hover:shadow-2xl hover:opacity-100
-                                                    transition-all ease-in-out duration-700"
+        <div id="select_button_circle" className={select_button_circle_className}
                                                     onClick={onSelectButtonClicked}>
 
             <img src={SelectButton} alt="Select Button" width="60px" height="60px" className="opacity-80 hover:opacity-100"/>

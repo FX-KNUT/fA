@@ -2,15 +2,15 @@ import { createStore } from "redux";
 import reducer, { DESTROY } from "./Reducer/Reducer.js";
 import "../tailwind.css"
 import { useEffect } from "react";
-import Container from "./Body Parts/Container.js";
-import SelectBar from "./SelectBar";
-import FunctionContainer from "./FunctionContainer/FunctionContainer.js";
-import Calculator from "./Functions/Calculator";
-import Calendar from "./Functions/Calendar";
+import Modal from "./Modals/Modal.js";
+import BodyParts from "./Not Modal Parts/Body Parts/BodyParts.js";
+import ModalInitializer from "./Modals/Logics/ModalInitializer.js";
 // import {loadFunctionContainer} from "./Waiting";
 // import KNUT from "../Res/Images/KNUT.jfif"
 
 // starting command = npm run akrom
+
+// bg-transparent border border-gray-500 hover:border-indigo-500 text-gray-500 hover:text-indigo-500 font-bold
 
 export let store = createStore(reducer);
 
@@ -24,27 +24,15 @@ function App() {
     html.classList.add("removescroll"); // 스크롤바를 없애서 옆에 div가 숨어있는걸 모르게. 웹으로 동작시 방향키 오른쪽 클릭하면 보임
     html.style.overflow = "hidden !important";
 
+    ModalInitializer();
+
     return () => {store.dispatch({type: DESTROY})};
   }, []);
 
   return (
     <>
-      <div id="background" className="min-h-screen inset-0 bg-yellow-100 bg-opacity-70">
-        <section id="wrap" className="absolute w-screen h-screen">
-          <Container />
-          <SelectBar />
-        </section>
-        <section id="functions" className="absolute top-0 -right-1/4
-                                            h-full functionbarsize
-                                            bg-pink-100 bg-opacity-80
-                                            transition-all ease-in-out duration-500">
-          <FunctionContainer />
-        </section>
-        {/* Functions */}
-        <Calculator />
-        <Calendar />
-      </div>
-      <div id="modal" className="absolute opacity-0.2 ease "></div>
+      <BodyParts />
+      <Modal />
     </>
   );
 }
