@@ -2,13 +2,14 @@
 // functionbarposition (right: 20%), firstfunction(right: 45%), secondfunction(right: 70%)
 
 import SelectButton from "../Res/Images/SelectBar.png";
-import SelectBarAnimator from "./Animators/SelectBarAnimator.js";
-import { select_button_circle_className } from "./ConstantStorage";
+import { store } from "./App";
+import { select_button_circle_className } from "./ConstantStorage.js";
+import { SELECT_BTN_CLICKED } from "./Reducer/Reducer";
 
 const SelectBar = () => {
 
     const onSelectButtonClicked = e => {
-        SelectBarAnimator();
+        store.dispatch({type: SELECT_BTN_CLICKED});
     }
 
     return (

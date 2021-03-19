@@ -1,8 +1,8 @@
+import { init_functions_calendar_className } from "../../../ConstantStorage";
+
 const Calendar = () => {
     return (
-        <div id="functions_calendar" className="absolute h-full w-1/4 -right-1/4
-                                                   bg-purple-200 bg-opacity-90
-                                                   transition-all ease-in-out duration-700">
+        <div id="functions_calendar" className={init_functions_calendar_className}>
             달력
         </div>
     );

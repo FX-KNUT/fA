@@ -1,10 +1,37 @@
+// import { funcs_className, functions, selectBtn, selectBtn_className } from "../ConstantStorage";
+
 const AnimationSynchronizer = (state) => {
+
+    // const { degree } = state;
 
     // This component requires refactoring of its algorithm inside as it's horrible.
 
     const {selected, degree, func_arr} = state;
     const selectBtn = document.querySelector("#select_button_circle");
     const functions = document.querySelector("#functions");
+
+    // switch(degree) {
+    //     case 3:
+
+    //         break;
+    //     case 2: 
+
+    //         break;
+    //     case 1:
+    //         {selected ?
+
+
+    //             :
+
+                
+    //         }
+    //         break;
+    //     case 0:
+    //         selectBtn.classList.value = selectBtn_className;
+    //         functions.classList.value = funcs_className;
+    //         break;
+    //     default:
+    // }
 
     switch(degree) {
         case 3:
