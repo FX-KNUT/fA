@@ -6,10 +6,18 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "bcrypt": "^5.0.1",
     "concurrently": "^6.0.0",
+    "cookie-parser": "^1.4.5",
     "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
     "electron": "^7.0.1",
     "electron-builder": "^22.1.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -49,5 +57,18 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.3",
     "electron": "^12.0.0"
-  }
+  },
+  "proxy": "http://localhost:3001",
+  "description": "f(A) - Anywhere, Personal Tool For You\r ===\r ### f(A)는 소소한 기능을 수행하는 것들을 모아 만든 웹 기반 데스크톱 어플리케이션입니다.\r #### 계산기, 알람, 메모, 달력 등 필요한 기능을 하나의 어플리케이션에서 손 쉽게 사용하세요.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iiy4383/fa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iiy4383/fa/issues"
+  },
+  "homepage": "https://github.com/iiy4383/fa#readme"
 }
