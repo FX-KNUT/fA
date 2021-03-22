@@ -11,8 +11,8 @@ const Body = () => {
     return (
         <div id="realbody" className="h-body w-full text-black flex items-center justify-center text-2xl">
             <pre>
-                <div id="welcome_text" className="">진형이 똥구멍</div>
-                <div id="welcome_clock" className=""> {time}</div>                
+                <div id="welcome_text" className="">진형이 자지</div>
+                <div id="welcome_clock" className="">{time}</div>                
             </pre>
         </div>
     );
