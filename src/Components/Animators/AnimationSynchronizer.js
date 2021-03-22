@@ -1,5 +1,8 @@
 // import { funcs_className, functions, selectBtn, selectBtn_className } from "../ConstantStorage";
 
+import { init_functions_calculator_className, init_functions_calendar_className, init_functions_className, init_select_button_circle_className } from "../ConstantStorage";
+import PlaceInitializer from "./PlaceInitializer";
+
 const AnimationSynchronizer = (state) => {
 
     // const { degree } = state;
@@ -9,103 +12,51 @@ const AnimationSynchronizer = (state) => {
     const {selected, degree, func_arr} = state;
     const selectBtn = document.querySelector("#select_button_circle");
     const functions = document.querySelector("#functions");
+    const calc = document.querySelector("#functions_calculator");
+    const cal = document.querySelector("#functions_calendar");
 
-    // switch(degree) {
-    //     case 3:
+    console.log(state);
+    console.log(state.func_arr);
 
-    //         break;
-    //     case 2: 
-
-    //         break;
-    //     case 1:
-    //         {selected ?
-
-
-    //             :
-
-                
-    //         }
-    //         break;
-    //     case 0:
-    //         selectBtn.classList.value = selectBtn_className;
-    //         functions.classList.value = funcs_className;
-    //         break;
-    //     default:
-    // }
+    if(degree > 0) PlaceInitializer();
 
     switch(degree) {
         case 3:
-            selectBtn.classList.remove("selectbtn-twofunc");
-            selectBtn.classList.add("selectbtn-two");
-            functions.classList.remove("-right-1/4");
-            functions.classList.add("right-0");
-            func_arr[1].classList.remove("-right-1/4");
-            func_arr[1].classList.remove("right-1/4");
-            func_arr[1].classList.add("secondfunction");
-            func_arr[0].classList.remove("right-0");
-            func_arr[0].classList.add("firstfunction");
+            selectBtn.classList.replace("right-select-bar", "selectbtn-two");
+            functions.classList.replace("-right-1/4", "right-0");
+            func_arr[0].value.classList.replace("-right-1/4", "firstfunction");
+            func_arr[1].value.classList.replace("-right-1/4", "secondfunction");
             break;
         case 2: 
             if (selected) {
-                selectBtn.classList.remove("selectbtn-cilcked");
-                selectBtn.classList.remove("selectbtn-two");
-                selectBtn.classList.remove("selectbtn-onefunc");
-                selectBtn.classList.add("selectbtn-one");
-                functions.classList.remove("-right-1/4");
-                functions.classList.add("right-0");
-                func_arr[0].classList.remove("right-0");
-                func_arr[0].classList.remove("secondfunction");
-                func_arr[0].classList.remove("-right-1/4");
-                func_arr[0].classList.add("firstfunction");
-                console.log(func_arr[0]);    
-                console.log(func_arr[0].classList);
+                selectBtn.classList.replace("right-select-bar", "selectbtn-one");
+                functions.classList.replace("-right-1/4", "right-0");
+                func_arr[0].value.classList.replace("-right-1/4", "firstfunction");
             } else {
-                selectBtn.classList.remove("selectbtn-two");
-                selectBtn.classList.add("selectbtn-twofunc");
-                functions.classList.remove("right-0");
-                functions.classList.add("-right-1/4");
-                func_arr[1].classList.remove("secondfunction");
-                func_arr[1].classList.add("right-1/4");
-                func_arr[0].classList.remove("firstfunction");
-                func_arr[0].classList.add("right-0");
+                selectBtn.classList.replace("right-select-bar", "selectbtn-twofunc");
+                func_arr[0].value.classList.replace("-right-1/4", "right-0");
+                func_arr[1].value.classList.replace("-right-1/4", "right-1/4");
             }
             break;
         case 1:
             if (selected) {
-                selectBtn.classList.remove("selectbtn-one");
-                selectBtn.classList.add("selectbtn-clicked");
-                functions.classList.remove("-right-1/4");
-                functions.classList.add("right-0");
+                selectBtn.classList.replace("right-select-bar", "selectbtn-clicked");
+                functions.classList.replace("-right-1/4", "right-0");
             } else {
-                functions.classList.remove("right-0");
-                functions.classList.add("-right-1/4");
-                func_arr[0].classList.remove("firstfunction");
-                func_arr[0].classList.add("right-0");
-                selectBtn.classList.remove("selectbtn-one");
-                selectBtn.classList.add("selectbtn-onefunc");
+                selectBtn.classList.replace("right-select-bar", "selectbtn-onefunc");
+                functions.classList.replace("right-0", "-right-1/4");
+                cal.className = init_functions_calendar_className;
+                calc.className = init_functions_calculator_className;
+                func_arr[0].value.classList.replace("-right-1/4", "right-0");
             }
             break;
         case 0:
-            try {
-                func_arr[0].classList.remove("secondfucntion");
-                func_arr[0].classList.remove("firstfucntion");
-                func_arr[0].classList.add("-right-1/4");
-                func_arr[1].classList.remove("secondfucntion");
-                func_arr[1].classList.remove("firstfucntion");
-                func_arr[1].classList.add("-right-1/4");
-            } catch {
-            } finally {
-                selectBtn.classList.remove("selectbtn-clicked");
-                selectBtn.classList.remove("selectbtn-onefunc");
-                selectBtn.classList.remove("selectbtn-twofunc");
-                selectBtn.classList.remove("selectbtn-one");
-                selectBtn.classList.remove("selectbtn-two");
-                functions.classList.remove("right-0");
-                functions.classList.add("-right-1/4");
-            }
-
+            selectBtn.className = init_select_button_circle_className;
+            functions.className = init_functions_className;
             break;
         default:
+            console.log(degree);
+            console.log(func_arr);
     }
 }
 

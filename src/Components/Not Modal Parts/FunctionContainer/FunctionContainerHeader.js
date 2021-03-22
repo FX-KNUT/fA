@@ -1,13 +1,13 @@
 // function-container-header => h-15 (height: 15%), function-container-body => h-75 (height: 75%)
 
-import { store } from "../../App.js";
-import { FUNCTION_CLOSER } from "../../Reducer/Reducer.js";
+// import { store } from "../../App.js";
+// import { FUNCTION_CLOSER } from "../../Reducer/Reducer.js";
 import close from "../../../Res/Images/Function_Close.png";
 
 const FunctionContainerHeader = () => {
 
     const onClick = e => {
-        store.dispatch({type: FUNCTION_CLOSER});
+        // store.dispatch({type: FUNCTION_CLOSER}); // 모달 처리 했음. 20210321
     };
 
     return (

@@ -3,7 +3,7 @@
 
 import SelectButton from "../Res/Images/SelectBar.png";
 import { store } from "./App";
-import { select_button_circle_className } from "./ConstantStorage.js";
+import { init_select_button_circle_className } from "./ConstantStorage.js";
 import { SELECT_BTN_CLICKED } from "./Reducer/Reducer";
 
 const SelectBar = () => {
@@ -13,7 +13,7 @@ const SelectBar = () => {
     }
 
     return (
-        <div id="select_button_circle" className={select_button_circle_className}
+        <div id="select_button_circle" className={init_select_button_circle_className}
                                                     onClick={onSelectButtonClicked}>
 
             <img src={SelectButton} alt="Select Button" width="60px" height="60px" className="opacity-80 hover:opacity-100"/>
