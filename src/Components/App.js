@@ -7,6 +7,7 @@ import BodyParts from "./Not Modal Parts/Body Parts/BodyParts.js";
 import ModalInitializer from "./Modals/Logics/ModalInitializer.js";
 import Calculator from "./Not Modal Parts/FunctionContainer/Functions/Calculator.js";
 import Calendar from "./Not Modal Parts/FunctionContainer/Functions/Calendar.js";
+
 // import {loadFunctionContainer} from "./Waiting";
 // import KNUT from "../Res/Images/KNUT.jfif"
 

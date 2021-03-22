@@ -1,4 +1,6 @@
 import AnimationSynchronizer from "../Animators/AnimationSynchronizer";
+import { SETTING } from "../ConstantStorage";
+import ModalResovler from "../Modals/Logics/ModalResolver";
 import StateValidator from "./StateValidator.js";
 
 export const SELECT_BTN_CLICKED = "select button clicked";
@@ -10,12 +12,17 @@ export const SELECT_BTN_FIRST_CLICKED = "select button first clicked";
 export const DEGREE_UP = "increase degree by 1";
 export const DEGREE_DOWN = "decrease degree by 1";
 export const FUNCTION_CLOSER = "close button at the top right side of FunctionContainerHeader";
+export const SETTING_CLICKED = "setting image has been selected so modal expected to be popped";
+export const MODAL_CLOSE = "modal expected to be closed";
+export const SIGN_IN = "client had wanted to sign in so modal expected to be popped";
 
 const reducer = (state = {
                     selected: false,
                     first_clicked: false,
                     degree: 0, 
-                    func_arr: []    
+                    func_arr: [],
+                    isModal: false,
+                    modal_mode: undefined 
                                     }, action) => {
 
     switch(action.type){
@@ -89,6 +96,15 @@ const reducer = (state = {
             state.selected = false;
             AnimationSynchronizer(state);
             return state;
+        case SETTING_CLICKED:
+            state.isModal = true;
+            state.modal_mode = SETTING;
+            ModalResovler(SETTING);
+            break;
+        case MODAL_CLOSE:
+            state.modal_mode = undefined;
+            state.isModal = false;
+            break;
         case DESTROY:
             // do nothing yet
             return state;

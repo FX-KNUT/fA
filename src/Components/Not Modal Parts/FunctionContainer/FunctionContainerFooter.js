@@ -1,12 +1,12 @@
 // function-container-header => h-15 (height: 15%), function-container-body => h-75 (height: 75%)
 import Setting from '../../../Res/Images/Setting.png';
-import { SETTING } from '../../ConstantStorage';
-import ModalResovler from '../../Modals/Logics/ModalResolver';
+import { store } from '../../App';
+import { SETTING_CLICKED } from '../../Reducer/Reducer';
 
 const FunctionContainerFooter = () => {
 
     const onClick = e => {
-        ModalResovler(SETTING);
+        store.dispatch({type: SETTING_CLICKED});
     }
 
     return (

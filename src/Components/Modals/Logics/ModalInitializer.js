@@ -1,3 +1,5 @@
+import { store } from "../../App";
+import { MODAL_CLOSE } from "../../Reducer/Reducer";
 import ToggleModal from "./ToggleModal";
 
 const ModalInitializer = () => {
@@ -5,7 +7,10 @@ const ModalInitializer = () => {
     // x button on up right side of modal background
     const closemodal = document.querySelectorAll('.modal-close')
     for (let i = 0; i < closemodal.length; i++) {
-      closemodal[i].addEventListener('click', ToggleModal)
+      closemodal[i].addEventListener('click', () => {
+        store.dispatch({type: MODAL_CLOSE});
+        ToggleModal();
+      });
     }
 
     // push esc button on keyboard to easily close the modal. need a conference to utilize this or not.
@@ -19,6 +24,7 @@ const ModalInitializer = () => {
           isEscape = (e.keyCode === 27)
         }
         if (isEscape && document.body.classList.contains('modal-active')) {
+          store.dispatch({type: MODAL_CLOSE});
           ToggleModal();
         }
     };
