@@ -16,13 +16,13 @@ const ModalInitializer = () => {
     // push esc button on keyboard to easily close the modal. need a conference to utilize this or not.
     // if we decide to use this function, we should add more things on it. for example: checking changes before closing
     document.onkeydown = e => {
+
         e = e || window.event;
         let isEscape = false;
-        if ("key" in e) {
-          isEscape = (e.key === "Escape" || e.key === "Esc")
-        } else {
-          isEscape = (e.keyCode === 27)
-        }
+
+        if ("key" in e) isEscape = (e.key === "Escape" || e.key === "Esc")
+        else isEscape = (e.keyCode === 27)
+
         if (isEscape && document.body.classList.contains('modal-active')) {
           store.dispatch({type: MODAL_CLOSE});
           ToggleModal();
@@ -34,6 +34,8 @@ const ModalInitializer = () => {
     for (let i = 0; i < openmodal.length; i++) {
         openmodal[i].addEventListener('click', e => {
           e.preventDefault();
+          const modal_footer = document.querySelector("#modal_footer");
+          modal_footer.classList.remove("hidden");
           ToggleModal();          
         });
     };

@@ -1,35 +1,45 @@
-// import { SETTING } from "../../ConstantStorage";
-// import { SIGN_IN } from "../../Reducer/Reducer";
+import { SETTING } from "../../ConstantStorage";
+import { SIGN_IN } from "../../Reducer/Reducer";
+import Setting from "../Contents/Setting.js";
+import Login from "../Contents/Login.js";
+import { useState } from "react";
+import { store } from "../../App";
 
-// const ModalResovler = shooter => {
+const ModalResovler = () => {
 
-//     // const modalBody = document.querySelector("#modal_body");
+    const [body, setBody] = useState(undefined);
 
-//     switch(shooter) {
-//         case SETTING:
-//             return (
-//                 <div id="modal_body_setting" className="">
-//                     <p>아이고</p>
-//                     <p>언제</p>
-//                     <p>다 하냐</p>
-//                     <p>ㅋㅋ</p>
-//                 </div>
-//             );
-//         case SIGN_IN:
-//             return (
-//                 <div id="modal_body_signIn" className="">
-//                     <p>로그인 구현</p>
-//                     <p>언제</p>
-//                     <p>다 하냐</p>
-//                     <p>ㅋㅋ</p>
-//                 </div>
-//             )
-//         default:
+    const listener = () => {
+        const { modal_mode } = store.getState();
+        setBody(modal_mode);
+    };
 
-//     }
-//     return (
-//         {/* What should I do? */}
-//     );
-// };
+    store.subscribe(listener);
 
-// export default ModalResovler;
+    switch(body) {
+        case SETTING:
+            return (
+                <Setting />
+            );
+        case SIGN_IN:
+            return (
+                <Login />
+            );
+        case undefined:
+            return (
+                <div id="modal_body_undefined">
+                    
+                </div>
+            );
+
+        default:
+            return (
+                <div id="modal_body_undefined">
+                    if you see this, please visit the manager of this application~
+                </div>
+            );
+
+    }
+};
+
+export default ModalResovler;

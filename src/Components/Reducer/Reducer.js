@@ -14,7 +14,7 @@ export const DEGREE_DOWN = "decrease degree by 1";
 export const FUNCTION_CLOSER = "close button at the top right side of FunctionContainerHeader";
 export const SETTING_CLICKED = "setting image has been selected so modal expected to be popped";
 export const MODAL_CLOSE = "modal expected to be closed";
-export const SIGN_IN = "client had wanted to sign in so modal expected to be popped";
+export const SIGN_IN = "로그인";
 
 const reducer = (state = {
                     selected: false,
@@ -88,11 +88,15 @@ const reducer = (state = {
 
         case SETTING_CLICKED:
             state.modal_mode = SETTING;
-            break;
+            return state;
 
+        case SIGN_IN:
+            state.modal_mode = SIGN_IN;
+            return state;
+            
         case MODAL_CLOSE:
             state.modal_mode = undefined;
-            break;
+            return state;
 
         case DESTROY:
             // do nothing yet

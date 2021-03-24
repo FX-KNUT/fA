@@ -1,4 +1,16 @@
-const ModalTitle = ({title}) => {
+import { useState } from "react";
+import { store } from "../../App";
+
+const ModalTitle = () => {
+
+    const [title, setTitle] = useState(undefined);
+
+    const listener = () => {
+        const { modal_mode } = store.getState();
+        setTitle(modal_mode);
+    };
+
+    store.subscribe(listener);
 
     return (
         <div id="modal_title" className="flex justify-between items-center pb-3">

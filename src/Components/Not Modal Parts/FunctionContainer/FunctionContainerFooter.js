@@ -6,7 +6,7 @@ import { SETTING_CLICKED } from '../../Reducer/Reducer';
 const FunctionContainerFooter = () => {
 
     const onClick = e => {
-        // store.dispatch({type: SETTING_CLICKED});
+        store.dispatch({type: SETTING_CLICKED});
     }
 
     return (
