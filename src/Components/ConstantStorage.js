@@ -15,6 +15,9 @@ export const functions = document.querySelector("#functions");
 export const CALC = "계산기";
 export const CAL = "달력";
 export const SETTING = "설정";
+export const EMAIL = "이메일";
+export const PASSWORD = "패스워드";
+export const INFO = "정보";
 
 // initialize classnames of functions' components
 

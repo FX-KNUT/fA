@@ -1,26 +1,39 @@
 import { useState } from "react";
 import { store } from "../../App";
+// import { EMAIL, PASSWORD } from "../../ConstantStorage";
 import { MODAL_CLOSE } from "../../Reducer/Reducer";
 import InfoValidator from "../Logics/InfoValidator";
+import LocalStorageChecker from "../Logics/LocalStorageChecker";
 import ToggleModal from "../Logics/ToggleModal";
 
 const Login = () => {
 
-    const [email, setEmail] = useState(''),
-          [password, setPassword] = useState(''),
-          [isIdChecked, setIsIdChecked] = useState(false),
-          [isInfoChecked, setIsInfoChecked] = useState(false);
+    const [init_email, init_password, init_isEmailChecked, init_isInfoChecked] = LocalStorageChecker();
+
+    const [email, setEmail] = useState(init_email),
+        [password, setPassword] = useState(init_password),
+        [isEmailChecked, setIsEmailChecked] = useState(init_isEmailChecked),
+        [isInfoChecked, setIsInfoChecked] = useState(init_isInfoChecked);
 
     const modal_footer = document.querySelector("#modal_footer");
     modal_footer.classList.add("hidden");
 
     const onChange = e => {
+
         const {target: {name, value}} = e;
-        if(name === "email"){
+
+        if(name === "email") {
             setEmail(value);
-        } else if(name === "password"){
+        } else if(name === "password") {
             setPassword(value);
-        }    
+        } else if(name === "storeEmail") {
+            setIsEmailChecked(prev => !prev);
+        } else if(name === "storeInfo") {
+            setIsInfoChecked(prev => !prev);
+        }
+
+        // 이메일 저장, 로그인 정보 저장 등은 로그인 구현 완료 이후 활용 예정
+        
     };
 
     const onSubmit = async e => {
@@ -33,15 +46,9 @@ const Login = () => {
     const onClick = e => {
         const {target: {name}} = e;
         
-        if(name === "sign_up") {
-            console.log("sign up");
-
-        } else if(name === "id_lost") {
-            console.log("id_lost");
-
-        } else if (name === "pw_lost") {
-            console.log("pw_lost");
-
+        if(name === "회원가입" || "아이디찾기" || "비밀번호찾기") {
+            const newWindow = window.open('/#/'.concat(name), name, "menubar=no, status=no, titlebar=no, toolbar=no");
+            newWindow.focus();
         } else if (name === "keepOffline") {
             console.log("keepOffline")
             store.dispatch({type: MODAL_CLOSE});
@@ -49,14 +56,6 @@ const Login = () => {
         }
         
     };
-
-    const storeIdClicked = e => {
-
-    }
-
-    const storeInfoClicked = e => {
-        
-    }
 
     return (
         <>
@@ -72,16 +71,16 @@ const Login = () => {
                         <input id="password" name="password" type="password" placeholder="비밀번호" value={password} onChange={onChange} className="text-lg" size="32" required />
                     </div>
                     <div id="checkbox_div" className="mt-2 ml-2">
-                        <label className="mr-4"><input id="store_id" name="storeID" type="checkbox" className="" onClick={storeIdClicked}/> 아이디 저장</label>
-                        <label><input id="store_account_info" name="storeInfo" type="checkbox" className="" onClick={storeInfoClicked}/> 로그인 정보 저장</label>
+                        <label className="mr-4"><input id="storeId" name="storeEmail" type="checkbox" className="" checked={isEmailChecked} onChange={onChange}/> 이메일 저장</label>
+                        <label><input id="store_account_info" name="storeInfo" type="checkbox" className="" checked={isInfoChecked} onChange={onChange}/> 로그인 정보 저장</label>
                     </div>
                     <div id="submit_div" className="flex mt-4 justify-center md:text-center text-base">
                         <input id="submit" type="submit" name="login" className="mr-4 px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400" value="로그인" />
                     </div>
                     <div id="find_div" className="flex flex-col mt-2 items-end mr-2">
-                        <input id="sign_up" type="button" name="sign_up" className="mt-1 px-2 w-1/5 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="회원 가입" onClick={onClick}/>
-                        <input id="id_lost" type="button" name="id_lost" className="mt-1 px-2 w-24 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="아이디 찾기" onClick={onClick}/>
-                        <input id="pw_lost" type="button" name="pw_lost" className="mt-1 px-2 w-28 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="비밀번호 찾기" onClick={onClick}/>
+                        <input id="회원가입" type="button" name="회원가입" className="mt-1 px-2 w-1/5 bg-transparent p-1 rounded-lg text-indigo-500 cursor-pointer hover:text-indigo-700 hover:underline text-right" value="회원 가입" onClick={onClick}/>
+                        <input id="아이디찾기" type="button" name="아이디찾기" className="mt-1 px-2 w-24 bg-transparent p-1 rounded-lg text-indigo-500 cursor-pointer hover:text-indigo-700 hover:underline text-right" value="아이디 찾기" onClick={onClick}/>
+                        <input id="비밀번호찾기" type="button" name="비밀번호찾기" className="mt-1 px-2 w-28 bg-transparent p-1 rounded-lg text-indigo-500 cursor-pointer hover:text-indigo-700 hover:underline text-right" value="비밀번호 찾기" onClick={onClick}/>
                     </div>
                     <div id="error_shooter" className="mt-4 p-2 invisible bg-red-900 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
                         <span className="flex w-10 rounded-full text-center bg-pink-600 px-2 py-1 text-xs font-bold mr-3">에러</span>

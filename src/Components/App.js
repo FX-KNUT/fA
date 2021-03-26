@@ -2,11 +2,8 @@ import { createStore } from "redux";
 import reducer, { DESTROY } from "./Reducer/Reducer.js";
 import "../tailwind.css"
 import { useEffect } from "react";
-import Modal from "./Modals/Modal.js";
-import BodyParts from "./Not Modal Parts/Body Parts/BodyParts.js";
 import ModalInitializer from "./Modals/Logics/ModalInitializer.js";
-import Calculator from "./Not Modal Parts/FunctionContainer/Functions/Calculator.js";
-import Calendar from "./Not Modal Parts/FunctionContainer/Functions/Calendar.js";
+import AppRouter from "./AppRouter.js";
 
 // import {loadFunctionContainer} from "./Waiting";
 // import KNUT from "../Res/Images/KNUT.jfif"
@@ -19,8 +16,7 @@ export let store = createStore(reducer);
 
 function App() {
 
-  // const [init, setInit] = useState(true);
-  // const getInfo = store.getState();
+  const {isLoggedIn} = store.getState();
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -33,12 +29,7 @@ function App() {
   }, []);
 
   return (
-    <>
-      <BodyParts />
-      <Modal />
-      <Calculator />
-      <Calendar />
-    </>
+    <AppRouter isLoggedIn={isLoggedIn} />
   );
 }
 

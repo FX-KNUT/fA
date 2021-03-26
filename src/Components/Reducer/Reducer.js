@@ -21,7 +21,8 @@ const reducer = (state = {
                     first_clicked: false,
                     degree: 0, 
                     func_arr: [],
-                    modal_mode: undefined 
+                    modal_mode: undefined,
+                    isLoggedIn: false
                                     }, action) => {
 
     switch(action.type){
