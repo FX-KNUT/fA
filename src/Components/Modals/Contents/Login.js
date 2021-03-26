@@ -7,7 +7,9 @@ import ToggleModal from "../Logics/ToggleModal";
 const Login = () => {
 
     const [email, setEmail] = useState(''),
-          [password, setPassword] = useState('');
+          [password, setPassword] = useState(''),
+          [isIdChecked, setIsIdChecked] = useState(false),
+          [isInfoChecked, setIsInfoChecked] = useState(false);
 
     const modal_footer = document.querySelector("#modal_footer");
     modal_footer.classList.add("hidden");
@@ -48,6 +50,14 @@ const Login = () => {
         
     };
 
+    const storeIdClicked = e => {
+
+    }
+
+    const storeInfoClicked = e => {
+        
+    }
+
     return (
         <>
             <div name="keepOffline" id="modal_contents_offline" className="">
@@ -60,6 +70,10 @@ const Login = () => {
                     </div>
                     <div id="password_div" className="border-8 border-white">
                         <input id="password" name="password" type="password" placeholder="비밀번호" value={password} onChange={onChange} className="text-lg" size="32" required />
+                    </div>
+                    <div id="checkbox_div" className="mt-2 ml-2">
+                        <label className="mr-4"><input id="store_id" name="storeID" type="checkbox" className="" onClick={storeIdClicked}/> 아이디 저장</label>
+                        <label><input id="store_account_info" name="storeInfo" type="checkbox" className="" onClick={storeInfoClicked}/> 로그인 정보 저장</label>
                     </div>
                     <div id="submit_div" className="flex mt-4 justify-center md:text-center text-base">
                         <input id="submit" type="submit" name="login" className="mr-4 px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400" value="로그인" />
