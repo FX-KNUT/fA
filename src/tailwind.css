@@ -184281,3 +184281,11 @@ body.modal-active {
   overflow-x: hidden;
   overflow-y: visible !important;
 }
+
+.h-3p {
+  height: 3%;
+}
+
+.h-77p {
+  height: 77%;
+}

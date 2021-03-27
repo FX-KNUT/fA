@@ -4,7 +4,7 @@ import FunctionContainerFooter from "./FunctionContainerFooter.js"
 import FunctionContainerHeader from "./FunctionContainerHeader.js"
 import FunctionContainerBody from "./FunctionContainerBody.js"
 
-// SelectBar 버튼 누르면 오른쪽에서 튀어 나오는 아이들
+// SelectBar 누르면 오른쪽에서 밀려나오는 기능 그릇
 const FunctionContainer = () => {
 
     return (
