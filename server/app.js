@@ -19,7 +19,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   secret: process.env.COOKIE_SECRET || 'akjlk%dalkds#2dfk',
-  store: new LokiStore(),
+  store: new LokiStore(), // connect-loki 모듈이 아닌, mongodb를 store로 바꿀 예정.
   cookie: {
     httpOnly: true,
     secure: false,
