@@ -5,13 +5,6 @@ import { useEffect } from "react";
 import ModalInitializer from "./Modals/Logics/ModalInitializer.js";
 import AppRouter from "./AppRouter.js";
 
-// import {loadFunctionContainer} from "./Waiting";
-// import KNUT from "../Res/Images/KNUT.jfif"
-
-// starting command = npm run akrom
-
-// bg-transparent border border-gray-500 hover:border-indigo-500 text-gray-500 hover:text-indigo-500 font-bold
-
 export let store = createStore(reducer);
 
 function App() {
@@ -22,10 +15,14 @@ function App() {
     const html = document.querySelector("html");
     html.classList.add("removescroll"); // 스크롤바를 없애서 옆에 div가 숨어있는걸 모르게. 웹으로 동작시 방향키 오른쪽 클릭하면 보임
     html.style.overflow = "hidden !important";
+    // const language = navigator.language || 'ko-KR';
 
     ModalInitializer();
 
-    return () => {store.dispatch({type: DESTROY})};
+    return () => {
+      store.dispatch({type: DESTROY});
+      // document.removeEventListener('click');
+    };
   }, []);
 
   return (

@@ -4,6 +4,7 @@ export const init_select_button_circle_className = "absolute top-0 right-select-
 export const init_functions_className = "absolute top-0 -right-1/4 h-full bg-green-200 bg-opacity-90 functionbarsize transition-all ease-in-out duration-500";
 export const init_functions_calendar_className = "absolute h-full w-1/4 -right-1/4 bg-pink-200 bg-opacity-90 transition-all ease-in-out duration-700";
 export const init_functions_calculator_className = "absolute h-full w-1/4 -right-1/4 bg-purple-200 bg-opacity-90 transition-all ease-in-out duration-700";
+export const init_functions_calculator_divs_className = "flex rounded-md items-center justify-center shadow-md";
 
 // querySelectors
 
