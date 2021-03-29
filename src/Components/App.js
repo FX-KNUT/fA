@@ -15,13 +15,11 @@ function App() {
     const html = document.querySelector("html");
     html.classList.add("removescroll"); // 스크롤바를 없애서 옆에 div가 숨어있는걸 모르게. 웹으로 동작시 방향키 오른쪽 클릭하면 보임
     html.style.overflow = "hidden !important";
-    // const language = navigator.language || 'ko-KR';
 
     ModalInitializer();
 
     return () => {
       store.dispatch({type: DESTROY});
-      // document.removeEventListener('click');
     };
   }, []);
 
