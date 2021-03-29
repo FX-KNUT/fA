@@ -15,6 +15,7 @@ import AppRouter from "./AppRouter.js";
 export let store = createStore(reducer);
 
 function App() {
+  // componentDidMount 필요. [ 서버와 연결을 위해서 ]
 
   const {isLoggedIn} = store.getState();
 
