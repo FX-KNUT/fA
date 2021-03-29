@@ -51,11 +51,11 @@ const Login = () => {
     };
 
     const storeIdClicked = e => {
-
+        setIsIdChecked(prev => !prev);
     }
 
     const storeInfoClicked = e => {
-        
+        setIsInfoChecked(prev => !prev);
     }
 
     return (

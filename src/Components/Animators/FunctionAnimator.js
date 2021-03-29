@@ -2,51 +2,13 @@ import { store } from "../App.js";
 import { CAL, CALC } from "../ConstantStorage.js";
 import { CALC_CLICKED, CAL_CLICKED } from "../Reducer/Reducer.js";
 
-const FunctionAnimator = e => {
+const FunctionAnimator = outerHTML => {
 
-    // This component requires refactoring of its algorithm inside as it's horrible.
-    // CALC = 계산기, CAL = 달력
-
-    switch(e.target.outerText) {
-        case CALC:
-            store.dispatch({type: CALC_CLICKED});
-            return;
-        case CAL:
-            store.dispatch({type: CAL_CLICKED});
-            return;
-        default:
+    if(outerHTML.includes(CALC)) {
+        store.dispatch({type: CALC_CLICKED});
     }
-
-    switch(e.target.alt) {
-        case CALC:
-            store.dispatch({type: CALC_CLICKED});
-            return;
-        case CAL:
-            store.dispatch({type: CAL_CLICKED});
-            return;
-        default:
-    }
-
-    try {
-        switch(e.target.previousSibling.outerText) {
-        case CALC:
-            store.dispatch({type: CALC_CLICKED});
-            return;
-        case CAL:
-            store.dispatch({type: CAL_CLICKED});
-            return;
-        default:
-    }   
-    } catch {
-        switch(e.target.childNodes[1].innerText) {
-        case CALC:
-            store.dispatch({type: CALC_CLICKED});
-            return;
-        case CAL:
-            store.dispatch({type: CAL_CLICKED});
-            return;
-        default:
-    }  
+    else if(outerHTML.includes(CAL)) {
+        store.dispatch({type: CAL_CLICKED}); 
     }
 
 }

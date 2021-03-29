@@ -5,8 +5,8 @@ import FindId from './Modals/Side Components/FindId';
 import FindPw from './Modals/Side Components/FindPw';
 import SignUp from './Modals/Side Components/SignUp';
 import BodyParts from "./Not Modal Parts/Body Parts/BodyParts";
-import Calculator from "./Not Modal Parts/FunctionContainer/Functions/Calculator";
-import Calendar from "./Not Modal Parts/FunctionContainer/Functions/Calendar";
+import Calculator from "./Not Modal Parts/FunctionContainer/Functions/Calculator/Calculator.js";
+import Calendar from "./Not Modal Parts/FunctionContainer/Functions/Calendar/Calendar.js";
 
 const AppRouter = ({isLoggedIn}) => {
 

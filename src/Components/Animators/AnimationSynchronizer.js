@@ -15,9 +15,6 @@ const AnimationSynchronizer = (state) => {
     const calc = document.querySelector("#functions_calculator");
     const cal = document.querySelector("#functions_calendar");
 
-    console.log(state);
-    console.log(state.func_arr);
-
     if(degree > 0) PlaceInitializer();
 
     switch(degree) {
@@ -55,8 +52,6 @@ const AnimationSynchronizer = (state) => {
             functions.className = init_functions_className;
             break;
         default:
-            console.log(degree);
-            console.log(func_arr);
     }
 }
 

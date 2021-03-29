@@ -9,7 +9,8 @@ const FunctionContainerBody = () => {
     const functions = Functions();
   
     const onClick = e => {
-        FunctionAnimator(e);
+        const {target: {outerText}} = e;
+        FunctionAnimator(outerText);
     }
 
     return ( 
@@ -17,13 +18,13 @@ const FunctionContainerBody = () => {
             {functions.map((arr, index) => {
                 return (
                     <div key={index} id="function_container_body" name={arr[1]} className="flex text-center items-center align-middle hover:opacity-60" onClick={onClick} index={index}>
-                        <span id="function_container_body_icon" className="w-1/5">
+                        <span id="function_container_body_icon" className="w-1/5 pointer-events-none">
                             <img src={arr[0]} alt={arr[1]} width="64px" height="64px" />
                         </span>
-                        <span id="function_container_body_text" className="w-3/5 h-full">
+                        <span id="function_container_body_text" className="w-3/5 h-full pointer-events-none">
                             {arr[1]}
                         </span>
-                        <span id="function_container_body_etc" className="w-1/5">
+                        <span id="function_container_body_etc" className="w-1/5 pointer-events-none">
                             여백
                         </span>
                     </div>

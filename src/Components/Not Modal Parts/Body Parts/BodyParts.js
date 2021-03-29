@@ -1,8 +1,8 @@
 import { functions_className } from "../../ConstantStorage";
 import SelectBar from "../../SelectBar";
 import FunctionContainer from "../FunctionContainer/FunctionContainer";
-import Calculator from "../FunctionContainer/Functions/Calculator";
-import Calendar from "../FunctionContainer/Functions/Calendar";
+import Calculator from "../FunctionContainer/Functions/Calculator/Calculator.js";
+import Calendar from "../FunctionContainer/Functions/Calendar/Calendar.js";
 import Container from "./Container";
 
 const BodyParts = () => {

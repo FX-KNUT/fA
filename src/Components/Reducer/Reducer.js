@@ -1,6 +1,5 @@
 import AnimationSynchronizer from "../Animators/AnimationSynchronizer";
 import { CAL, CALC, SETTING } from "../ConstantStorage";
-// import ModalResovler from "../Modals/Logics/ModalResolver";
 import StateValidator from "./StateValidator.js";
 
 export const SELECT_BTN_CLICKED = "select button clicked";
@@ -22,7 +21,8 @@ const reducer = (state = {
                     degree: 0, 
                     func_arr: [],
                     modal_mode: undefined,
-                    isLoggedIn: false
+                    isLoggedIn: false,
+                    calculator: false
                                     }, action) => {
 
     switch(action.type){
@@ -52,9 +52,11 @@ const reducer = (state = {
                         keySearcher = state.func_arr.find(ele => ele.name === CALC);
                 if (keySearcher === undefined || keySearcher.clicked === false) {
                     state.func_arr.push({name: CALC, value: CALC_SELECTOR, clicked: true});
+                    state.calculator = true;
                     state.degree++;
                 } else {
-                    state.func_arr.splice(state.func_arr.indexOf(keySearcher), 1);   
+                    state.func_arr.splice(state.func_arr.indexOf(keySearcher), 1);
+                    state.calculator = false;
                     state.degree--;                           
                 }
                 AnimationSynchronizer(state); 
@@ -72,7 +74,7 @@ const reducer = (state = {
                     state.func_arr.push({name: CAL, value: CAL_SELECTOR, clicked: true});
                     state.degree++;
                 } else {
-                    state.func_arr.splice(state.func_arr.indexOf(keySearcher), 1); 
+                    state.func_arr.splice(state.func_arr.indexOf(keySearcher), 1);
                     state.degree--;                         
                 }
                     AnimationSynchronizer(state);
