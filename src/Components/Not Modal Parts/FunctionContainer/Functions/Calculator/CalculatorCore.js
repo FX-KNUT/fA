@@ -4,7 +4,7 @@ import CalculatorKeys from "./CalculatorKeys";
 
 const CalculatorCore = () => {
 
-    const [ result, setResult ] = useState(2);
+    const [ result, setResult ] = useState('0');
     const [ operator, setOperator] = useState(null);
     const [ value, setValue] = useState(null);
     const [ history, setHistory ] = useState('');

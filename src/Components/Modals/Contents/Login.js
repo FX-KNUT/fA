@@ -33,16 +33,11 @@ const Login = () => {
     const onClick = e => {
         const {target: {name}} = e;
         
-        if(name === "sign_up") {
-            console.log("sign up");
 
-        } else if(name === "id_lost") {
-            console.log("id_lost");
-
-        } else if (name === "pw_lost") {
-            console.log("pw_lost");
-
-        } else if (name === "keepOffline") {
+        if(name === "회원가입" || "아이디찾기" || "비밀번호찾기") {
+            const newWindow = window.open('/#/'.concat(name), name, "menubar=no, status=no, titlebar=no, toolbar=no");
+            newWindow.focus();
+         } else if (name === "keepOffline") {
             console.log("keepOffline")
             store.dispatch({type: MODAL_CLOSE});
             ToggleModal();
@@ -79,9 +74,9 @@ const Login = () => {
                         <input id="submit" type="submit" name="login" className="mr-4 px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400" value="로그인" />
                     </div>
                     <div id="find_div" className="flex flex-col mt-2 items-end mr-2">
-                        <input id="sign_up" type="button" name="sign_up" className="mt-1 px-2 w-1/5 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="회원 가입" onClick={onClick}/>
-                        <input id="id_lost" type="button" name="id_lost" className="mt-1 px-2 w-24 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="아이디 찾기" onClick={onClick}/>
-                        <input id="pw_lost" type="button" name="pw_lost" className="mt-1 px-2 w-28 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="비밀번호 찾기" onClick={onClick}/>
+                        <input id="sign_up" type="button" name="회원가입" className="mt-1 px-2 w-1/5 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="회원 가입" onClick={onClick}/>
+                        <input id="id_lost" type="button" name="아이디찾기" className="mt-1 px-2 w-24 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="아이디 찾기" onClick={onClick}/>
+                        <input id="pw_lost" type="button" name="비밀번호찾기" className="mt-1 px-2 w-28 bg-transparent p-1 rounded-lg text-indigo-500 hover:text-indigo-700 hover:underline text-right" value="비밀번호 찾기" onClick={onClick}/>
                     </div>
                     <div id="error_shooter" className="mt-4 p-2 invisible bg-red-900 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
                         <span className="flex w-10 rounded-full text-center bg-pink-600 px-2 py-1 text-xs font-bold mr-3">에러</span>
