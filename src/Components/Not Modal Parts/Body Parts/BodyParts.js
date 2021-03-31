@@ -15,7 +15,6 @@ const BodyParts = () => {
         <section id="functions" className={functions_className}>
           <FunctionContainer />
         </section>
-        {/* Functions */}
         <Calculator />
         <Calendar />
       </div>
